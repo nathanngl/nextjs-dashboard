@@ -224,6 +224,8 @@ export async function fetchFilteredCustomers(query: string) {
       total_paid: formatCurrency(customer.total_paid),
     }));
 
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
     return customers;
   } catch (err) {
     console.error('Database Error:', err);
